@@ -1,0 +1,55 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Receiptpage </title>
+    <style>
+      h1 , h2 {
+        text-align : center;
+        color : #01357d;
+        font-family : monospace;
+
+      }
+      img {
+        hight: 350px;
+        width : 100%;
+        object-fit : cover ;
+      }
+      p {
+        font-family :  Garamond, serif ;
+        color: #01357d;
+      
+      }
+
+      #message{
+        text-align: center;
+      }
+      #receipt{
+        border: solid #01357d;
+        border-width: 1px;
+        max-width:400px;
+        margin:0 auto;
+        padding: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1> The Phone Shop </h1>
+    
+    <a href="/"><img src="/static/ThePhoneShopBanner.png"></a>
+    <p id="message">Thanks for your purchase. Please review your order details below.</p>
+    <div id = "receipt">
+      <h2>Receipt</h2>
+      <p>Name: {{order['name']}} </p>
+      <p>Email: {{order['Email']}}</p>
+      <p>Address: {{order['address']}}</p>
+      <p>Item: {{order['product-name']}}</p>
+      <p>Price: {{order['product-price']}}</p>
+      
+    </div>
+    
+
+
+  </body>
+
+</html>

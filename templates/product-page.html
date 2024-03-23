@@ -1,0 +1,95 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title> Productpage </title>
+    <style>
+      h1 , h2 {
+        text-align : center;
+        color : #01357d;
+        font-family : monospace;
+
+      }
+      img {
+        hight: 350px;
+        width : 100%;
+        object-fit : cover ;
+      }
+      p {
+        font-family :  Garamond, serif ;
+        color: #0584a1;
+        text-align : center;
+      }
+      
+      #product-image{
+        height: 500px;
+        width : 500px;
+
+      }
+      #product-section{
+        text-align: center;
+      }
+      p{
+        max-width: 1000px;
+        text-align: left;
+        margin: 0 auto;
+      }
+      #order-section{
+        text-align: center;
+        border: double #01357d; 
+        max-width:350px;
+        margin: 0 auto;
+        margin-top:25px;
+        
+      }
+      #Buy-buttom{
+        font-size:21px;
+        background-color : #06014d  ;
+        color : white;
+        border-radius:20px;
+        margin: 15px;
+
+        
+      }
+      input{
+        margin: 13px;
+      }
+    </style>
+
+  </head>
+  <body>
+   <div id="product-section">
+     <h1> The Phone Shop </h1>
+    <img src="/static/ThePhoneShopBanner.png">
+    <h1>{{product['name']}}</h1>
+    <img id="product-image" src={{product['image']}}>
+    <h2>Description</h2>
+    <p>{{product['desc']}}</p>
+   </div> 
+
+    <div id="order-section">
+      <h2>Order</h2>
+      
+    <form action= '/browse-products/product-page/receipt' method="post">
+      <label for="name">Name</label><br>
+      <input type="text" name="name" placeholder="Enter your name please!"><br>
+      <label for="Email">Email</label><br>
+      <input type="email" name="Email" placeholder="Enter your email please!"><br>
+      <label for="address">Address</label><br>
+      <input type="text" name="address" placeholder="Enter your address please!"><br>
+      <label for="card-number">Card number</label><br>
+      <input type="number" name="card-number" placeholder="Enter your card number please!""><br>
+
+      <input type="hidden" name="product-name" value="{{product['name']}}">
+      <input type="hidden" name="product-price" value="{{product['price']}}">
+
+      <input id = "Buy-buttom" type="submit" value="Buy">
+    </form>
+      
+      
+      
+    </div>
+    
+
+  </body>
+
+</html>
